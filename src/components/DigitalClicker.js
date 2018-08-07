@@ -10,13 +10,15 @@ export default class DigitalClicker extends Component {
     };
   }
 
-  incrementClicker = () =>
+  incrementClicker = () => {
+    let safeClick = this.state.timesClicked;
     this.setState(
       {
-        timesClicked: ++this.state.timesClicked
+        timesClicked: ++safeClick
       },
       () => console.log(this.state.timesClicked)
     );
+  };
 
   render() {
     return (
